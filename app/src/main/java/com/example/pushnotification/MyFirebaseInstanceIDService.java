@@ -1,6 +1,8 @@
 package com.example.pushnotification;
 
 
+import android.graphics.Color;
+
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -19,8 +21,9 @@ public class MyFirebaseInstanceIDService extends FirebaseMessagingService {
     private void shownotification(String title, String message) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "MyNotifications-Raj")
                 .setContentTitle(title)
-                .setSmallIcon(R.drawable.one)
+                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark_normal_background)
                 .setAutoCancel(true)
+                .setColor(Color.RED)
                 .setContentText(message);
         NotificationManagerCompat manager = NotificationManagerCompat.from(this);
         manager.notify(999,builder.build());
